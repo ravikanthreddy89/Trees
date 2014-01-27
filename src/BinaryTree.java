@@ -39,6 +39,7 @@ public class BinaryTree<Key extends Comparable<Key>,Value> {
 		return (Value)x.val;
 	}
 
+	/*Node deletion*/
 	public void del(Key key){
 		root=del(root, key);
 	}
