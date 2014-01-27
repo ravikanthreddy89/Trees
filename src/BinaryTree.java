@@ -78,6 +78,7 @@ public class BinaryTree<Key extends Comparable<Key>,Value> {
 		return min(x.left);
 	}
 
+	/*Sum of all the nodes in a given binary tree*/
 	public void pathSums(){
 		int[] p_sum= new int[100];
 		Sum t_sum=new Sum();
