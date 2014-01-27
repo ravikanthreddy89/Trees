@@ -142,7 +142,7 @@ public class BinaryTree<Key extends Comparable<Key>,Value> {
 		}		
 	}
 	
-	/*Right node to a given node*/
+	/*Prints the value of a node right to a given node in that level*/
 	
 	public void rightNode(Key key){
 		Value ret= rightNode(root,key);
