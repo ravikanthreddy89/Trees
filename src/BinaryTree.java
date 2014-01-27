@@ -190,4 +190,26 @@ public class BinaryTree<Key extends Comparable<Key>,Value> {
 			}
 		return ret;
 		}
+	
+	/*Deepest Left leaf node*/
+	
+	public void deepLeftLeaf(){
+		Node result = new Node(-1, null);
+		deepLeftLeaf(root, "left", 0, result);
+		System.out.println("The deepest left leaf node : "+ result.val);
+	}
+	
+	private void deepLeftLeaf(Node x, String dir, int level, Node ret){
+		
+		if(x==null) return;
+		if(x.left==null && x.right==null) {
+			if(level>(Integer) ret.key && dir.equals("left")){
+				ret.val=x.val;
+				return;
+			}
+		}
+		
+		deepLeftLeaf(x.left, "left", level+1, ret);
+		deepLeftLeaf(x.right,"right", level+1, ret);
+	}
 }

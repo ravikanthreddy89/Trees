@@ -13,6 +13,15 @@ public class Tt {
 		bt.insert(9,9);
 		bt.pathSums();
 		bt.levelOrder();
-		bt.rightNode(4);		
+		bt.rightNode(4);
+		BinaryTree<Integer, Integer> bt1= new BinaryTree<Integer, Integer>();
+		bt1.insert(13,13);
+		bt1.insert(6,6);
+		bt1.insert(24, 24);
+		bt1.insert(15, 15);
+		bt1.insert(14,14);
+		bt1.insert(10, 10);
+		bt1.deepLeftLeaf();
+		
 		}
 }
