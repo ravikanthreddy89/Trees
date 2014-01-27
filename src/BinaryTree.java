@@ -214,4 +214,36 @@ public class BinaryTree<Key extends Comparable<Key>,Value> {
 		deepLeftLeaf(x.left, "left", level+1, ret);
 		deepLeftLeaf(x.right,"right", level+1, ret);
 	}
+	
+	
+	
+	/*Remove all the nodes in the path if the sum <= given k*/
+	
+	public void delNodesInPath(int sum){
+		root=delNodesInPath(root,sum);
+	}
+	
+	private Node delNodesInPath(Node x, int sum){
+		if(x==null) return null;
+		
+		int check_sum = sum-(Integer)x.val;
+		if(x.right==null && x.left==null) {
+			if(check_sum>0) {
+				return null;
+			}
+			else {
+				return x;
+			}
+		}
+		
+		x.left=delNodesInPath(x.left, check_sum);
+		x.right=delNodesInPath(x.right,check_sum);
+		
+		
+		if(x.right==null && x.left==null ){
+			return null;
+		}
+		
+		return x;
+	}
 }

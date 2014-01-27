@@ -21,6 +21,14 @@ public class Tt {
 		bt1.insert(15, 15);
 		bt1.insert(14,14);
 		bt1.insert(10, 10);
+		bt1.insert(4, 4);
+		bt1.insert(3,3);
+		bt1.insert(5,5);
+		bt1.insert(28,28);
+		bt1.insert(25,25);
+		
+		bt1.delNodesInPath(29);
+		bt1.levelOrder();
 		bt1.deepLeftLeaf();
 		
 		}
