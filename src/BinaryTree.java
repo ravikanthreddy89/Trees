@@ -6,7 +6,7 @@ class Sum{
 }
 
 
-public class BinaryTree<Key extends Comparable<Key>,Value> {
+public class BinaryTree<Key extends Comparable<Key>,Value> implements Iterable<Key> {
 
 	Node root=null;
 
@@ -246,4 +246,41 @@ public class BinaryTree<Key extends Comparable<Key>,Value> {
 		
 		return x;
 	}
+	
+	public Iterator<Key> iterator() {
+   	// TODO Auto-generated method stub
+	   preOrderIterator pitr= new preOrderIterator(this.root);
+	   
+   	return (Iterator<Key>)pitr;
+   }
+	
+	
+	private class preOrderIterator<Key> implements Iterator<Key>{
+
+	   private Node root;
+	   private Stack<Node> stack;
+	   private Node current;
+	   
+	   preOrderIterator(Node x){
+		   this.root=x;
+		   this.stack=new Stack<Node>();
+		   stack.push(this.root);
+	   }
+	   @Override
+	   public boolean hasNext() {
+		// TODO Auto-generated method stub
+		if(stack.isEmpty()) return false;
+		return true;
+	   } 
+
+	   @Override
+	   public Key next() {
+		// TODO Auto-generated method stub
+		if(this.stack.isEmpty()) return null;
+		current=stack.pop();
+		if(current.right!=null) stack.push(current.right);
+		if(current.left!=null) stack.push(current.left);
+		return (Key)current.key;
+	   }
+
 }
