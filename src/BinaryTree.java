@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Stack;
 
 /*Some classes for pathSum variant problems*/
 class Sum{
@@ -282,5 +284,63 @@ public class BinaryTree<Key extends Comparable<Key>,Value> implements Iterable<K
 		if(current.left!=null) stack.push(current.left);
 		return (Key)current.key;
 	   }
-
+	  @Override
+	  public void remove() {
+		// TODO Auto-generated method stub
+		
+	  }
+   }
+	
+	
+   /*Method that returns distance between two keys in a binary search tree.Assuming both keys exist.*/
+	int dist(Key k1, Key k2){
+		return dist(root,k1,k2);
+	}
+	
+	int dist(Node x, Key k1,Key k2){
+		/*handle three cases
+		 * 1. if any key matches with current node's key
+		 * 2. if keys are on either side of current node's key
+		 * 3. if both keys fall on one side of current node*/
+		int ret=-1;
+		int comp1=x.key.compareTo(k1);
+		int comp2=x.key.compareTo(k2);
+		
+		if(comp1==0) 
+			return getDist(x,k2);
+		if(comp2==0)
+			return getDist(x,k1);
+				
+		if(comp1<0 && comp2 <0)
+			return dist(x.right,k1,k2);
+		
+		if(comp1>0 && comp2 >0)
+			return dist(x.left,k1,k2);
+		return getDist(k1)+getDist(k2);
+	}
+	
+	/*Given a key this method returns the distance of it from current node and -1 if key is not found*/
+	int getDist(Key k){
+		return getDist(root,k);
+	}
+	
+	int getDist(Node x, Key k){
+		int dist=0;
+		if(x==null){
+			dist=-1;
+			return dist;
+		}
+		int comp=x.key.compareTo(k);
+		if(comp==0) {
+			dist=0;
+			return dist;
+		}
+		int temp=0;
+		if(comp>0)  temp=getDist(x.left,k);
+		else temp=getDist(x.right,k);
+		if(temp==-1) dist=-1;
+		else dist=temp+1;
+		
+		return dist;
+	}
 }
