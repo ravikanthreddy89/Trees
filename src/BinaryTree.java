@@ -291,13 +291,29 @@ public class BinaryTree<Key extends Comparable<Key>,Value> implements Iterable<K
 	  }
    }
 	
+	/*Lowest common ancestor in BST assuming both keys exist.*/
+	public Key lca(Key k1,Key k2){
+		return lca(root,k1,k2);
+	}
+	
+	private Key lca(Node x, Key k1, Key k2){
+		if(x==null) return null;
+		int comp1=x.key.compareTo(k1);
+		int comp2=x.key.compareTo(k2);
+		
+		if(comp1==0 || comp2==0)return (Key)x.key;
+		if(comp1<0 && comp2 <0) return (Key) lca(x.right,k1,k2);
+		if(comp1>0 && comp2>0) return (Key)lca(x.left,k1,k2);
+		return (Key)x.key;
+	}
+	
 	
    /*Method that returns distance between two keys in a binary search tree.Assuming both keys exist.*/
 	int dist(Key k1, Key k2){
 		return dist(root,k1,k2);
 	}
 	
-	int dist(Node x, Key k1,Key k2){
+	private int dist(Node x, Key k1,Key k2){
 		/*handle three cases
 		 * 1. if any key matches with current node's key
 		 * 2. if keys are on either side of current node's key
@@ -324,7 +340,7 @@ public class BinaryTree<Key extends Comparable<Key>,Value> implements Iterable<K
 		return getDist(root,k);
 	}
 	
-	int getDist(Node x, Key k){
+	private int getDist(Node x, Key k){
 		int dist=0;
 		if(x==null){
 			dist=-1;

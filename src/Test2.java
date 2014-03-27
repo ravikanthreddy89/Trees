@@ -32,6 +32,9 @@ public class Test2 {
 			else if(cmds[0].equals("dist2")){
 				System.out.println("Distance b/w nodes : "+bt.dist(Integer.parseInt(cmds[1]), Integer.parseInt(cmds[2])));
 			}
+			else if(cmds[0].equals("lca")){
+				System.out.println("Common ancestor :"+bt.lca(Integer.parseInt(cmds[1]), Integer.parseInt(cmds[2])));
+			}
 		}
 		
 	}
