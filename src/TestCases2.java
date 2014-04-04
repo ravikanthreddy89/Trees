@@ -1,6 +1,6 @@
 
 
-public class Tt {
+public class TestCases2 {
 
 	public static void main(String[] args){
 	
@@ -11,9 +11,13 @@ public class Tt {
 		bt.insert(4,4);
 		bt.insert(8,8);
 		bt.insert(9,9);
-		bt.pathSums();
+		
+	
+		bt.pathSums();//path sums test
 		bt.levelOrder();
-		bt.rightNode(4);
+		bt.rightNode(4);//right node test
+		
+		
 		BinaryTree<Integer, Integer> bt1= new BinaryTree<Integer, Integer>();
 		bt1.insert(13,13);
 		bt1.insert(6,6);
@@ -27,9 +31,9 @@ public class Tt {
 		bt1.insert(28,28);
 		bt1.insert(25,25);
 		
-		bt1.delNodesInPath(29);
+		bt1.delNodesInPath(29);//deleting nodes in the root to leaf path which sum up to <= given value
 		bt1.levelOrder();
-		bt1.deepLeftLeaf();
+		bt1.deepLeftLeaf();// printing deepest left leaf node
 		
 		}
 }
