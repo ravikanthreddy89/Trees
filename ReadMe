@@ -1,0 +1,29 @@
+This is a practice implementation which I implemented during Winter break. I did all I can to make it as smooth as possible to understand
+the code. I've included terminal session recording my testing. Please forgive me if it causes any inconvenience and I would really appreciate any feed back. Thank you. 
+
+Classes and their roles 
+======================================
+
+BinaryTree : ****************Please take a look at this file, I've included some figures.************
+             The core class that implements BinarySearchTree and all other functions.
+             
+Node 	   : Class that defines a node in binary search tree.
+
+Test2	   : A class to test the binary search tree(with key of type "Integer" and value of type "String") 
+             manually with commands. Once you run this class it prints commands and what they do.
+
+TestCases2 : Contains two test cases I used to test the implementation.
+
+typescript : A small terminal session of my testing captured with script command. I used the tree shown below.
+
+                    13
+                   /  \
+                  /    \
+                 /      \
+                6        14
+               / \         \
+              /   \         \
+             4     11        15
+            / \    / \
+           3   5  9  12    
+            

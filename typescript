@@ -1,0 +1,56 @@
+Script started on Thu 03 Apr 2014 08:27:09 PM EDT
+]2;mercutio.public.buffalo.edu: /eng/home/rgudipat/workspace/Trees/srcrgudipat@mercutio(51-8:27pm)$ java Test2
+List of commands 
+Please use <Integer,String> Key-value pairs.
+=====================================================================================
+insert <key> <Value>  : insert into tree a key-value pair
+get <key> : get the value associated with key
+del <key> : del a node with given key
+delMin : delete the node with minimum key
+dist <key> : return the distance of a node with given key from root node
+dist2 <key_1> <key_2> : return the distance between two nodes (nodes must exist)
+lca <key_1> <key_2> : return the lowest common ancestor of given keys
+pathSums : returns the sum of numbers fromed by root to leaf paths
+delPaths : deletes any path where sum of its keys <= given sum
+rightNode <key> : print right node in the same level of given key
+deepll : prints deepest left leaf node 
+levelorder : prints the level order tree traversal
+quit : quits the execution
+=====================================================================================
+insert 13 13
+insert 14 14
+insert 15 15
+insert 6 6
+insert 11 11
+insert 9 9
+insert 12 12
+insert 4 4
+insert 3 3
+insert 5 5
+dist 3
+Distance : 3
+dist 15
+Distance : 2
+dist2 3 15
+Distance b/w nodes : 5
+dist2 3 9
+Distance b/w nodes : 4
+lca 3 9
+Common ancestor :6
+lca 3 15
+Common ancestor :13
+deepll
+The deepest left leaf node : 9
+rightNode 3
+Right node value :5
+rightNode 6
+Right node value :14
+rightNode 14
+No right node
+pathSums
+The total sum:1655934
+quit
+rgudipat@mercutio(52-8:30pm)$ exit
+exit
+
+Script done on Thu 03 Apr 2014 08:30:53 PM EDT
