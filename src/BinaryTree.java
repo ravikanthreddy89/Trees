@@ -125,8 +125,15 @@ public class BinaryTree<Key extends Comparable<Key>,Value> implements Iterable<K
 		root=delMin(root);
 	}
 	
+	/*Convert the tree into Doubly Linked List & return the head pointer
+	 * NOTE : Original tree will be destroyed as this conversion is in-place
+	 * And the method "printDLL()" given head pointer to DLL prints it.
+	 */
 	
-	
+	public void convert2DLL(){
+		Node x=convert2DLL(this.root);
+		printDLL(x);
+	}
 	/*=============================================================*/
 	/*Private methods hidden from client that implement the real functionality of above methods.*/
 	
@@ -430,4 +437,42 @@ public class BinaryTree<Key extends Comparable<Key>,Value> implements Iterable<K
 		
 		return dist;
 	}
+	
+	
+	private Node convert2DLL(Node x){
+		Node head=null;//return this as head pointer to DLL
+		Node prev=null;// temp reference to keep track of previously visited node
+		
+		Node node=x;
+		Stack<Node> stack=new Stack<Node>();
+		
+		while(!stack.isEmpty() || node!=null){
+			if(node!=null){
+				stack.push(node);
+				node=node.left;
+			}
+			else {
+				node=stack.pop();
+				if(head==null){
+					head=node; //current node is head pointer of resultant DLL
+				}
+				node.left=prev;
+				if(prev!=null) prev.right=node;
+				prev=node;
+				node=node.right;
+			}
+		}
+		
+		return head;
+	}
+	
+	
+	private void printDLL(Node x){
+		Node temp=x;
+		while(temp!=null){
+			System.out.println(temp.val+" ");
+			temp=temp.right;
+		}
+	}
+	
 }
