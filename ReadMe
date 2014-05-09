@@ -1,5 +1,5 @@
-This is a practice implementation which I implemented during Winter break. I did all I can to make it as smooth as possible to understand
-the code. A testing session on my machine is captured using typescript and included. Please forgive me if it causes any inconvenience and I would really appreciate any feed back. Thank you. 
+This is my practise repo for Binary Tree. I've listed the API calls below to add code on top of that. 
+I would really appreciate any feedback. Thank you.
 
 Classes and their roles 
 ======================================
@@ -7,9 +7,9 @@ Classes and their roles
 BinaryTree : ****************Please take a look at this file, I've included some figures.************
              The core class that implements BinarySearchTree and all other functions.
              
-Node 	   : Class that defines a node in binary search tree.
+Node       : Class that defines a node in binary search tree.
 
-Test2	   : A class to test the binary search tree(with key of type "Integer" and value of type "String") 
+Test2      : A class to test the binary search tree(with key of type "Integer" and value of type "String") 
              manually with commands. Once you run this class it prints commands and what they do.
 
 TestCases2 : Contains two test cases I used to test the implementation.
@@ -27,3 +27,34 @@ typescript : A small terminal session of my testing captured with script command
             / \    / \
            3   5  9  12    
             
+
+API
+=============
+
+-> insert(Key key, Value val)
+
+-> get(Key key)
+
+->del(Key key) [Hibbard deletion]
+
+->iterator()
+
+->delMin()
+
+->convert2DLL() : Converts the whole tree into a doubly linked list. 
+
+->levelOrder() : Prints the level order traversal of tree
+
+->dist(Key k1,Key k2) : returns the distance between two nodes.
+
+
+
+
+
+
+
+
+
+
+
+
