@@ -15,9 +15,13 @@ public class TestCases2 {
 	
 		bt.pathSums();//path sums test
 		bt.levelOrder();
+		System.out.println();
 		bt.rightNode(4);//right node test
 		
+		bt.rotateAlternateLevel();
 		
+		System.out.println("bp");
+		bt.levelOrder();
 		BinaryTree<Integer, Integer> bt1= new BinaryTree<Integer, Integer>();
 		bt1.insert(13,13);
 		bt1.insert(6,6);
@@ -31,9 +35,9 @@ public class TestCases2 {
 		bt1.insert(28,28);
 		bt1.insert(25,25);
 		
-		bt1.delNodesInPath(29);//deleting nodes in the root to leaf path which sum up to <= given value
-		bt1.levelOrder();
-		bt1.deepLeftLeaf();// printing deepest left leaf node
+		//bt1.delNodesInPath(29);//deleting nodes in the root to leaf path which sum up to <= given value
+		//bt1.levelOrder();
+		//bt1.deepLeftLeaf();// printing deepest left leaf node
 		
 		}
 }

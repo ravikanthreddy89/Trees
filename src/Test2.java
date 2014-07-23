@@ -23,6 +23,7 @@ public class Test2 {
 		System.out.println("deepll : prints deepest left leaf node ");
 		System.out.println("levelorder : prints the level order tree traversal");
 		System.out.println("convert2DLL : convert the tree into a doubly linked list. **** Tree is destroyed****");
+		System.out.println("printVertically : prints the tree in vertical order");
 		System.out.println("quit : quits the execution");
 		System.out.println("=====================================================================================");
 		
@@ -113,6 +114,10 @@ public class Test2 {
 			
 			else if(cmds[0].equals("convert2DLL")){
 				bt.convert2DLL();
+			}
+			
+			else if(cmds[0].equals("printVertically")){
+				bt.printVertically();
 			}
 			
 		}

@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Stack;
 
 /*Some classes for pathSum variant problems*/
@@ -134,6 +136,30 @@ public class BinaryTree<Key extends Comparable<Key>,Value> implements Iterable<K
 		Node x=convert2DLL(this.root);
 		printDLL(x);
 	}
+	
+	
+	
+	public void rotateAlternateLevel(){
+		rotateAlternateLevel(root,0);
+	}
+	
+	
+	public void printVertically(){
+		HashMap<Integer, ArrayList<Key>> map=new HashMap<Integer,ArrayList<Key>>();
+		printVertically(root,0,map);
+		
+		for(int u : map.keySet()){
+			for(Key key : map.get(u)){
+				System.out.print("-->"+key);
+			}
+			System.out.println("========================");
+		}
+	}
+	
+	
+	
+	
+	
 	/*=============================================================*/
 	/*Private methods hidden from client that implement the real functionality of above methods.*/
 	
@@ -475,4 +501,38 @@ public class BinaryTree<Key extends Comparable<Key>,Value> implements Iterable<K
 		}
 	}
 	
+	// Not working....under construction
+	private void rotateAlternateLevel(Node node, int i) {
+		// TODO Auto-generated method stub
+		
+		if(node==null) return;
+		if(i%2==0){
+			Node temp=node.right;
+			node.right=node.left;
+			node.left=temp;
+			
+		}
+		
+		rotateAlternateLevel(node.right, i+1);
+		rotateAlternateLevel(node.left, i+1);
+	}
+	
+	
+
+	//Based on inorder traversal
+	private void printVertically(Node node, int offset, HashMap<Integer, ArrayList<Key>> map) {
+		// TODO Auto-generated method stub
+		//base case
+		if(node==null) return;
+		
+		printVertically(node.left, offset-1, map);
+		
+		if(map.get(offset)==null) map.put(offset, new ArrayList<Key>());
+		map.get(offset).add((Key)node.key);
+		
+		printVertically(node.right,offset+1,map);
+		
+		
+	}
+
 }
